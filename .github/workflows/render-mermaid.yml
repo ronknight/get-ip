@@ -9,13 +9,23 @@ jobs:
   render-mermaid:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4  # Update to latest version
+      - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}  # Use 'token' instead of 'github-token'
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Find and Render Mermaid Diagrams
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          files: 'README.md' 
+          node-version: 18 # Or your preferred Node.js version
+
+      - name: Install Mermaid CLI
+        run: npm install -g @mermaid-js/mermaid-cli
+
+      - name: Render Mermaid Diagrams
+        run: |
+          # Find Mermaid code in your files (e.g., using 'find' or 'grep')
+          # Render each Mermaid code block using 'mmdc'
+          # Replace Mermaid code with image links in your files
 
       - name: Commit changes
         run: |
@@ -23,4 +33,4 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add .
           git commit -m "Render Mermaid diagrams"
-          git push 
+          git push
