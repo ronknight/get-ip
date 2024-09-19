@@ -14,7 +14,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}  # Use 'token' instead of 'github-token'
 
       - name: Find and Render Mermaid Diagrams
-        uses: vsoch/mmdc@v1.0.0
         with:
           files: 'README.md' 
 
