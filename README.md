@@ -185,7 +185,7 @@ The web interface provides a visually appealing and easy-to-read format for view
 
 Here's a visual representation of the Get IP application's structure and data flow:
 
-<antArtifact identifier="get-ip-diagram" type="application/vnd.ant.mermaid" title="Get IP Application Diagram">
+```mermaid
 graph TD
     A[User] -->|Access| B[Flask Web Server]
     B -->|Get Local IP| C[Socket Library]
@@ -208,7 +208,7 @@ graph TD
     style F fill:#ccffff,stroke:#333,stroke-width:2px
     style G fill:#ccccff,stroke:#333,stroke-width:2px
     style H fill:#ffcccc,stroke:#333,stroke-width:2px
-</antArtifact>
+    ```
 
 This diagram illustrates how the different components of the Get IP application interact, from user access to data retrieval and display.
 ## 🤝 Contributing
