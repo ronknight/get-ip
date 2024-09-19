@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Address and Geolocation Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .info-box {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .info-box h2 {
+            margin-top: 0;
+            color: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <h1>IP Address and Geolocation Information</h1>
+    
+    <div class="info-box">
+        <h2>IP Addresses</h2>
+        <p><strong>Local IP:</strong> {{ local_ip }}</p>
+        <p><strong>External IP:</strong> {{ external_ip }}</p>
+    </div>
+    
+    <div class="info-box">
+        <h2>Geolocation Information</h2>
+        {% if location.error %}
+            <p>{{ location.error }}</p>
+        {% else %}
+            <p><strong>City:</strong> {{ location.city }}</p>
+            <p><strong>Region:</strong> {{ location.region }}</p>
+            <p><strong>Country:</strong> {{ location.country }}</p>
+            <p><strong>Location:</strong> {{ location.loc }}</p>
+            <p><strong>Organization:</strong> {{ location.org }}</p>
+            <p><strong>Postal Code:</strong> {{ location.postal }}</p>
+            <p><strong>Timezone:</strong> {{ location.timezone }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
