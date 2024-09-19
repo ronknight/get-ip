@@ -208,7 +208,8 @@ graph TD
     style F fill:#ccffff,stroke:#333,stroke-width:2px
     style G fill:#ccccff,stroke:#333,stroke-width:2px
     style H fill:#ffcccc,stroke:#333,stroke-width:2px
-    ```
+
+```
 
 This diagram illustrates how the different components of the Get IP application interact, from user access to data retrieval and display.
 ## 🤝 Contributing
